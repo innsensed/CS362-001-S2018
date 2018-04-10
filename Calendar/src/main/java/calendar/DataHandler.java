@@ -288,7 +288,7 @@ public class DataHandler {
         
         //Get the first recurrence taken care of
         GregorianCalendar occurrenceDay = 
-                new GregorianCalendar(appt.getStartYear(), appt.getStartMonth()-1, 
+                new GregorianCalendar(appt.getStartYear(), appt.getStartMonth()-1,
                     appt.getStartDay());
         
         //If the first occurrence is after the last day, then it doesn't matter
@@ -329,11 +329,11 @@ public class DataHandler {
             GregorianCalendar day) {
         //If the appointment does not recur then return null
         if (!appt.isRecurring()) {
-            return null;
+     //       return null;
         }
         
         //Leave the original day untouched.
-        GregorianCalendar nextDay = (GregorianCalendar)day.clone();
+        GregorianCalendar nextDay = null; // (GregorianCalendar)day.clone();
         
         //This depends on the recurrence settings
         switch (appt.getRecurBy()) {
@@ -351,7 +351,7 @@ public class DataHandler {
                 
                 //The user did specify weekly recurrence, so increment the
                 //day until it falls on a weekday the user specified
-                for (int k = 0; k < 7; k++) {
+                for (int k = 0; k < 7; k++) { // original k < 7
                     nextDay.add(nextDay.DAY_OF_MONTH, 1);
                     int newDayOfWeek = nextDay.get(nextDay.DAY_OF_WEEK);
                 

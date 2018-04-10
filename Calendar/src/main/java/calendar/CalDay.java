@@ -233,7 +233,7 @@ public class CalDay {
 					hour = 12;	
 				}
 				else{
-					hour = hour%12;
+					hour = hour%10; // original hour%12
 				}
 				
 				//add preceding zero to minutes less than 10
