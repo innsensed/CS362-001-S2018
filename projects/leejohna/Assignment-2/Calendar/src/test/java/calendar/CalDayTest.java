@@ -15,9 +15,9 @@ public class CalDayTest{
   public void test00()  throws Throwable  {
         CalDay calDays0 = new CalDay();
 	String strong0 = calDays0.toString();
-	calDays0.getDay();
-	calDays0.getMonth();
-	calDays0.getYear();
+	assertEquals(0, calDays0.getDay());
+	assertEquals(0, calDays0.getMonth());
+	assertEquals(0, calDays0.getYear());
 	calDays0.getAppts();
   }
   @Test(timeout = 4000)
@@ -28,7 +28,7 @@ public class CalDayTest{
 	Appt appt0 = new Appt(15, 30, 9, 10, 2018, "Birthday Party", "This is my birthday party", "xyz@gmail.com");
 	calDays1.addAppt(appt0);
 	calDays1.getFullInfomrationApp(calDays1);
-	calDays1.getSizeAppts();
+	assertEquals(1, calDays1.getSizeAppts());
 	String string1 = calDays1.toString();
   }
 

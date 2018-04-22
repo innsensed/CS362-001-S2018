@@ -25,11 +25,11 @@ public class DataHandlerTest{
 
 	Appt appt0 = new Appt(15, 30, 9, 10, 2018, "Birthday Party", "This is my birthday party", "xyz@gmail.com");
 	Appt appt1 = new Appt(18, 15, 9, 10, 2018, "My Appointment", "I must go", "abc@hotmail.com");
-	datahandler0.saveAppt(appt1);
-	datahandler0.saveAppt(appt0);
+	assertTrue(datahandler0.saveAppt(appt1));
+	assertTrue(datahandler0.saveAppt(appt0));
 	datahandler0.getApptRange(today0, tomorrow0);
-	datahandler0.deleteAppt(appt1);
-	datahandler0.save();
+	assertTrue(datahandler0.deleteAppt(appt1));
+	assertTrue(datahandler0.save());
   }
   @Test(timeout = 4000)
   public void test01()  throws Throwable  {
@@ -51,7 +51,7 @@ public class DataHandlerTest{
 	appt2.setRecurrence(recurDaysArr,1,1,1);
 	Appt appt3 = new Appt(25, 500, 200, 19, 0, "My Appointment", "I must go", "abc@hotmail.com");
 	assertTrue(datahandler2.saveAppt(appt3));
-	datahandler2.saveAppt(appt2);
+	assertTrue(datahandler2.saveAppt(appt2));
 	datahandler2.getApptRange(calendar2, tomorrow2);
 	}
 }
